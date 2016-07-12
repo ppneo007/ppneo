@@ -13,6 +13,5 @@ var group_doc  = t_dim_doc.group().reduceCount().all();
 var group_type = t_dim_type.group().reduceCount().all();
 
 
-sssss
-
 var flag = false;
+
