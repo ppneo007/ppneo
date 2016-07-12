@@ -11,3 +11,6 @@ var t_dim_type = table_ndx.dimension(function (d) {
 var group_time = t_dim_timeline.group().reduceCount().all();
 var group_doc  = t_dim_doc.group().reduceCount().all();
 var group_type = t_dim_type.group().reduceCount().all();
+
+
+sssss
