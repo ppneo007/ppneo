@@ -1,51 +1,102 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>夏日北冰洋的GitHub博客 by ppneo007</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/ppneo007/ppneo">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/ppneo007/ppneo/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/ppneo007/ppneo/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+    <section class="page-header">
+      <h1 class="project-name">夏日北冰洋的GitHub博客</h1>
+      <h2 class="project-tagline">夏日北冰洋GitHub博客</h2>
+      <a href="https://github.com/ppneo007/ppneo" class="btn">View on GitHub</a>
+      <a href="https://github.com/ppneo007/ppneo/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ppneo007/ppneo/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <h1>夏日北冰洋的GitHub博客</h1>
-          <p>夏日北冰洋GitHub博客</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/ppneo007">ppneo007</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
-        <h1>
-<a id="ppneo" class="anchor" href="#ppneo" aria-hidden="true"><span class="octicon octicon-link"></span></a>ppneo</h1>
+    <section class="main-content">
+      <h1>
+<a id="ppneo" class="anchor" href="#ppneo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ppneo</h1>
 
 <p>夏日北冰洋的CSDN博客</p>
-      </section>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+<h1>
+<a id="关于文件状态" class="anchor" href="#%E5%85%B3%E4%BA%8E%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关于文件状态</h1>
+
+<p>一般仓库中的文件可能存在于这4种状态：
+ 1）Untracked files                     → 文件未被跟踪（A）
+ 2）Untracked but not Change   → 已跟踪，但是未修改（B）
+ 3）Changes but not updated     → 已跟踪，文件被修改，但并没有添加到暂存区（C）
+ 4）Changes to be committed    → 已跟踪，文件被修改，已添加到暂存区，这是下次提交的内容（D）</p>
+
+<h1>
+<a id="常用git命令" class="anchor" href="#%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>常用GIT命令</h1>
+
+<ol>
+<li><p>git clone  （B）
+说明：将代码克隆到本地（本地：当前控制台进入的目录）</p></li>
+<li><p>git add   （A-&gt;D）
+git add   说明：将指定新文件添加到本地暂存区（可以是一个文件，也可以是一个文件夹下面的所有文件）
+git add .                                    说明：将所有的新文件提交暂存区
+git add --all                              说明：将所有的新文件提交暂存区</p></li>
+<li><p>git reset HEAD  （D-&gt;A）
+说明：将新添加的文件撤出暂存区</p></li>
+<li><p>git commit  （C-&gt;D）
+git commit   说明： 将指定文件修改提交到本地暂存区（可以是一个文件，也可以是一个文件夹下面的所有文件）
+git commit -a                                  说明：将所有修改过的工作文件提交暂存区git </p></li>
+<li><p>git log
+说明：查看commit提交日志(每次提交会生成唯一的commit_ID)</p></li>
+<li><p>git reset
+git reset  --soft  commit_ID       说明：将当前工作区恢复到commit_ID指示的那次状态， 工作区代码的修改保留  （D-&gt;C）
+git reset  --hard commit_ID    说明：将当前工作区恢复到commit_ID指示的那次状态， 工作区代码的修改同时被强制回退到修改之前的状态  （D-&gt;B）</p></li>
+<li><p>git push  （D-&gt;B）
+git push                                 说明：将提交到暂存区的修改推送到远程仓库
+git push -u origin master   说明：clone到本地后的初次提交</p></li>
+<li><p>git pull  （B-&gt;B）
+说明：将远程仓库更新到本地</p></li>
+<li><p>git diff  
+说明：比较当前文件和暂存区文件差异（一个文件或者文件夹下面的所有文件）</p></li>
+<li><p>git status
+说明：扫描当前工作区的所有改动，包括文件的增加、删除、修改</p></li>
+<li><p>git checkout 
+git checkout   说明：撤销本地修改（可以是一个文件，也可以是一个文件夹下面的所有文件）
+git checkout -f                                  说明：撤销本地所有修改</p></li>
+</ol>
+
+<h1>
+<a id="关于冲突" class="anchor" href="#%E5%85%B3%E4%BA%8E%E5%86%B2%E7%AA%81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关于冲突</h1>
+
+<p>大部分代码冲突是以下情况产生： 本地代码未更新到远程仓库的最新状态， 然后本地修改之后进行pull操作， 如果远程仓库的代码和本地修改代码部分有重叠部分，这部分就会产生冲突。
+<img src="http://mail.chaoqiankeji.com/attachment/downloadex?ri=%2Falimail%2FinternalLinks%2FrefreshToken&amp;o=1&amp;et=normal&amp;f=49491bea-6d67-4e7e-9b89-21412c142495&amp;e=liang%40chaoqiankeji.com&amp;n=temp4cj.png&amp;m=2_0%3ADzzzzycSZzP%24----50ep85w&amp;ext=png" alt=""></p>
+
+<p>这时把本地修改commit提交之后，进行pull操作
+<img src="http://mail.chaoqiankeji.com/attachment/downloadex?ri=%2Falimail%2FinternalLinks%2FrefreshToken&amp;o=1&amp;et=normal&amp;f=6caab19b-b140-4a6d-a386-3aad4bd96a6c&amp;e=liang%40chaoqiankeji.com&amp;n=temp4cj.png&amp;m=2_0%3ADzzzzycSZzP%24----50ep85w&amp;ext=png" alt=""></p>
+
+<p>查看冲突文件如下：
+<img src="http://mail.chaoqiankeji.com/attachment/downloadex?ri=%2Falimail%2FinternalLinks%2FrefreshToken&amp;o=1&amp;et=normal&amp;f=ac8bc3e4-b583-4cd4-9001-671a0fcf7778&amp;e=liang%40chaoqiankeji.com&amp;n=temp4cj.png&amp;m=2_0%3ADzzzzycSZzP%24----50ep85w&amp;ext=png" alt="">
+&lt;&lt;&lt;&lt;&lt;  和  &gt;&gt;&gt;&gt;&gt;&gt;&gt;之间的就是冲突代码， "==========="之上的是本地的修改， "==========="之下的是远程仓库的最新代码
+然后根据实际情况，合并本地的修改和远程仓库的修改， 然后再进行commit操作即可。</p>
+
+<h1>
+<a id="关于文件的跟踪设置" class="anchor" href="#%E5%85%B3%E4%BA%8E%E6%96%87%E4%BB%B6%E7%9A%84%E8%B7%9F%E8%B8%AA%E8%AE%BE%E7%BD%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关于文件的跟踪设置</h1>
+
+<p>如果我们希望项目目录下面的某些文件的增删改不被跟踪（即不进入远程仓库），尤其是是编译生成的中间文件和目标文件，需要在.gitignore中进行设置，
+可以忽略某个文件夹，也可以忽略某个后缀的一类文件。如果项目跟目录下没有该文件（.gitignore是个隐藏文件），则可以手动创建： 以.gitignore为文件名的一个文本文件。
+例如：
+<img src="http://mail.chaoqiankeji.com/attachment/downloadex?ri=%2Falimail%2FinternalLinks%2FrefreshToken&amp;o=1&amp;et=normal&amp;f=12afe0b6-7811-4b9e-b2b5-464f09735c36&amp;e=liang%40chaoqiankeji.com&amp;n=temp4cj.png&amp;m=2_0%3ADzzzzycSZzP%24----50ep85w&amp;ext=png" alt=""></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ppneo007/ppneo">夏日北冰洋的GitHub博客</a> is maintained by <a href="https://github.com/ppneo007">ppneo007</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
